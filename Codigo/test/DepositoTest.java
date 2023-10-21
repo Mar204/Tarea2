@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class DepositoTest {
     @Test
+    @DisplayName("Test 9")
     void añadir3intsYQuitar1(){
         Deposito<Integer> depo = new Deposito<>();
         depo.addElemento(7);
@@ -12,6 +13,7 @@ class DepositoTest {
         assertEquals(3,depo.getElemento());
     }
     @Test
+    @DisplayName("Test 10")
     void quedarseSinElementos(){
         Deposito<String> depo = new Deposito<>();
         depo.addElemento("baba");
@@ -19,6 +21,7 @@ class DepositoTest {
         assertNull(depo.getElemento());
     }
     @Test
+    @DisplayName("Test 11")
     void depositoVacio(){
         Deposito<String> depo = new Deposito<>();
         assertNull(depo.getElemento());

@@ -11,21 +11,25 @@ class ExpendedorTest {
         exp = new Expendedor(3);
     }
     @Test
+    @DisplayName("Test 12")
     void comprarSnickers() throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
         Producto snick = exp.comprarProducto(new Moneda1500(),Enumeracion.SNICKER);
         assertTrue(snick instanceof Snicker);
     }
     @Test
+    @DisplayName("Test 13")
     void comprarCoca() throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
         Producto coc =exp.comprarProducto(new Moneda1500(),Enumeracion.COCA_COLA);
         assertTrue(coc instanceof CocaCola);
     }
     @Test
+    @DisplayName("Test 14")
     void comprarSinVuelto() throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
         Producto prod = exp.comprarProducto(new Moneda100(),Enumeracion.COCA_COLA);
         assertNull(exp.getVuelto());
     }
     @Test
+    @DisplayName("Test 15")
     void vueltoDe200() throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
         Producto prod = exp.comprarProducto(new Moneda500(),Enumeracion.FANTA);
         Moneda v = exp.getVuelto();
@@ -37,6 +41,7 @@ class ExpendedorTest {
         assertEquals(200,vuelto);
     }
     @Test
+    @DisplayName("Test 16")
     void vueltoDe1300() throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
         Producto prod = exp.comprarProducto(new Moneda1500(),Enumeracion.SPRITE);
         Moneda v = exp.getVuelto();
@@ -48,6 +53,7 @@ class ExpendedorTest {
         assertEquals(1300,vuelto);
     }
     @Test
+    @DisplayName("Test 17")
     void dineroInsuficiente() throws NoHayProductoException, PagoIncorrectoException {
         Moneda m = new Moneda100();
         try{
@@ -58,6 +64,7 @@ class ExpendedorTest {
         }
     }
     @Test
+    @DisplayName("Test 18")
     void sinProductos() throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
         exp.comprarProducto(new Moneda1500(),Enumeracion.COCA_COLA);
         exp.comprarProducto(new Moneda1500(),Enumeracion.COCA_COLA);
@@ -72,6 +79,7 @@ class ExpendedorTest {
         }
     }
     @Test
+    @DisplayName("Test 19")
     void sinMoneda()throws NoHayProductoException, PagoInsuficienteException{
         try{
             exp.comprarProducto(null,Enumeracion.COCA_COLA);
